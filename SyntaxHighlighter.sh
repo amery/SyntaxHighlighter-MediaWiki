@@ -1,4 +1,6 @@
-R=/extensions/syntax-highlighter-code-colorizer
+#!/bin/sh
+
+EXTDIR=/extensions/SyntaxHighlighter
 
 render_css() {
 	local f="$EXTDIR/styles/sh$1.css"
