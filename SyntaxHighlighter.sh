@@ -41,7 +41,7 @@ function setupHeadersForHighlight(\$out)
 
 $(for x in Core $CSS; do render_css $x; done)
 
-$(render_js shCore)
+$(render_js XRegExp shCore)
 $(for x in $BRUSH; do render_js shBrush$x; done)
 
 	\$out->addScript('<script type="text/javascript">SyntaxHighlighter.all();</script>');

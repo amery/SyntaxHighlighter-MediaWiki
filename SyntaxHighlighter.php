@@ -14,6 +14,7 @@ function setupHeadersForHighlight($out)
 	$out->addScript('<link rel="stylesheet" type="text/css" href="'.$wgScriptPath.'/extensions/SyntaxHighlighter/styles/shCore.css"></link>');
 	$out->addScript('<link rel="stylesheet" type="text/css" href="'.$wgScriptPath.'/extensions/SyntaxHighlighter/styles/shThemeDefault.css"></link>');
 
+	$out->addScript('<script type="text/javascript" src="'.$wgScriptPath.'/extensions/SyntaxHighlighter/scripts/XRegExp.js"></script>');
 	$out->addScript('<script type="text/javascript" src="'.$wgScriptPath.'/extensions/SyntaxHighlighter/scripts/shCore.js"></script>');
 	$out->addScript('<script type="text/javascript" src="'.$wgScriptPath.'/extensions/SyntaxHighlighter/scripts/shBrushBash.js"></script>');
 	$out->addScript('<script type="text/javascript" src="'.$wgScriptPath.'/extensions/SyntaxHighlighter/scripts/shBrushDiff.js"></script>');
