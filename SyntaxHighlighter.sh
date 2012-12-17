@@ -3,17 +3,23 @@
 EXTDIR=/extensions/SyntaxHighlighter
 
 render_css() {
-	local f="$EXTDIR/styles/sh$1.css"
+	local f= x=
+	for x; do
+		f="$EXTDIR/styles/sh$x.css"
 	cat <<EOT
 	\$out->addScript('<link rel="stylesheet" type="text/css" href="'.\$wgScriptPath.'$f"></link>');
 EOT
+	done
 }
 
 render_js() {
-	local f="$EXTDIR/scripts/sh$1.js"
+	local f= x=
+	for x; do
+		f="$EXTDIR/scripts/$x.js"
 	cat <<EOT
 	\$out->addScript('<script type="text/javascript" src="'.\$wgScriptPath.'$f"></script>');
 EOT
+	done
 }
 
 CSS=ThemeDefault
@@ -35,8 +41,8 @@ function setupHeadersForHighlight(\$out)
 
 $(for x in Core $CSS; do render_css $x; done)
 
-$(render_js Core)
-$(for x in $BRUSH; do render_js Brush$x; done)
+$(render_js shCore)
+$(for x in $BRUSH; do render_js shBrush$x; done)
 
 	\$out->addScript('<script type="text/javascript">SyntaxHighlighter.all();</script>');
 	return true;
